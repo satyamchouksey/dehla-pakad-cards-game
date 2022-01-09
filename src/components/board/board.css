@@ -1,0 +1,49 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    background-color: whitesmoke;
+    height: 100vh;
+    background-image: url('../../images/table.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 55px;
+}
+.inHandVisibleCards {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player{
+    width: 17.5%;
+    height: 25%;
+}
+.row{
+    height: 33%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row1{
+    left:-187px;
+    top: 80px;
+}
+.row3{
+    left:-187px;
+    top:-90px;
+}
+.col{
+    width:50%;
+    height: 50%;
+    display: flex;
+}
+.col1{
+    justify-content: start;
+    padding-left:8%;
+}
+.col2{
+    justify-content: end;
+    padding-right: 30%;
+}

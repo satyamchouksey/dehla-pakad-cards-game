@@ -88,7 +88,7 @@ const Card = ({i, style}) => {
     const suit = getSuit(i);
     const colorClass = 'card ' + getColor(i);
     if(i<0){
-        return <img className="card" src={cardBack} alt=''/>
+        return <img style={style} className="card" src={cardBack} alt=''/>
         
     }
     return (

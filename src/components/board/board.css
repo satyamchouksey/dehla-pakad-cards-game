@@ -9,6 +9,10 @@
     background-size: contain;
     background-position-y: 55px;
 }
+.deckDownFaced{
+    left:-400px;
+    position: relative;
+}
 .inHandVisibleCards {
     position: relative;
     display: flex;

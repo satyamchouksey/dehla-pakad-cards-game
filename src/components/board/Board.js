@@ -4,8 +4,8 @@ import './board.css'
 const players =[[0,-1],[1,0],[0,1],[-1,0]]
 const acePositions=[0,13,26,39];
 
-// {/* {[...Array(52).keys()].map((i)=><Card i={i}/>)} */}
-
+// call cards{/* {[...Array(52).keys()].map((i)=><Card i={i}/>)} */}
+// facedDowndeck {[...Array(20).keys()].map((item,index)=><Card style={{position: 'absolute', left:`${index*2}px`, top:`${index*1}px`, fontSize: '20px'}} i={-1}/>)}
 const Board = () => {
     const [deck, setDeck] = useState([]);
     const shuffle = (cards=[...Array(52).keys()]) => {
@@ -67,6 +67,9 @@ const Board = () => {
     return (
         <div className="board">
             <div className="row">{/*later just keep users card open*/}
+                <div className="deckDownFaced">
+                    {[...Array(20).keys()].map((item,index)=><Card style={{position: 'absolute', left:`${index*1.2}px`, top:`${index*1}px`, fontSize: '20px'}} i={-1}/>)}
+                </div>
                 {inHandCards(0,13, "row1")}
             </div>
             <div className="row">

@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Board from './components/board/Board';
-import Card from './components/card/Card';
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Fragment } from 'react';
 
 function App() {
   return (
       <Fragment>
-        <Board/>
+        <DndProvider backend={HTML5Backend}>
+          <Board/>
+        </DndProvider>
       </Fragment>
   );
 }

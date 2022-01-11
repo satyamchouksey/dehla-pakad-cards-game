@@ -1,5 +1,6 @@
 import React from 'react'
 import './card.css'
+import { useDrag } from "react-dnd";
 import cardBack from './../../images/back-teal.png'
 const ranks = 'A 2 3 4 5 6 7 8 9 10 J Q K'.split(' ');
 const suits = '♠︎ ♥︎ ♣︎ ♦︎'.split(' ');
@@ -83,7 +84,14 @@ const createSuit = (suit) => (pos) => {
 };
 
 
-const Card = ({i, style}) => {
+const Card = ({i, style, owner}) => {
+    const [{ isDragging }, drag] = useDrag(() => ({
+        type: "image",
+        item: { id: i, owner },
+        collect: (monitor) => ({
+          isDragging: !!monitor.isDragging(),
+        }),
+      }));
     const rank = getRank(i);
     const suit = getSuit(i);
     const colorClass = 'card ' + getColor(i);
@@ -91,8 +99,11 @@ const Card = ({i, style}) => {
         return <img style={style} className="card" src={cardBack} alt=''/>
         
     }
+    if(i>52){
+      return null;
+    }
     return (
-        <div style={style} className="deck">
+        <div ref={drag} style={style} className="deck">
             <div className={colorClass}>
                 <div className="card-suits">
                     {suitPositions[i % 13].map(createSuit(suit))}

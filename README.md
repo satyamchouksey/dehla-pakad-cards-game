@@ -1,5 +1,6 @@
 # Getting Started with Create React App
 netlify link: https://cardsmania.netlify.app/
+Future scope: add multi player functionality by creating connection between multiple client
 
 ## Available Scripts
 
